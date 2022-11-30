@@ -31,7 +31,6 @@
         </div>
         <div class = "contentBlob">
             <div class="projBanner">
-                <!-- <h1>Today is <%= dayz%></h1> -->
                 <h3>proj title</h3>
                 <p>This project lorem</p>
             </div>
@@ -40,21 +39,33 @@
                     <div class="rowHeader">
                         Scoping
                     </div>
-                    <div class="list">
-                        <div class="item" draggable="true">do something long ass text to test</div>
-                        <div class="item" draggable="true">do something long ass text to test2</div>
-                    </div>
                     <form class ='' action="/" method="post">
                         <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
                         <button type="submit" name="button">+</button>
+                        <!-- //     document.querySelector('.myForm').addEventListener('submit', function(evt) {
+                        //         // let projTask = [];
+                        //         // projTask.state = evt.target.parentElement.parentElement.querySelector('.rowHeader').textContent.trim();
+                        //         console.log(evt.target.parentElement.parentElement.querySelector('.rowHeader'));
+                        //         }); -->
                     </form>
+                    <div class="list">
+                        <% for (let i =0;i<listItem.length;i++){ %>
+                            <div class="item" draggable="true">
+                                <p> <%=listItem[i]%></p>
+                            </div>
+                        <% } %>
+                    </div>
                 </div>
                 <div class="rowBlocks">
                     <div class="rowHeader">
                         Work in Progress
                     </div>
                     <div class = "list">
-
+                        <% for (let i =0;i<wipList.length;i++){ %>
+                            <div class="item" draggable="true">
+                                <p> <%=wipList[i]%></p>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
                 <div class="rowBlocks">
@@ -62,11 +73,15 @@
                         Completed
                     </div>
                     <div class = "list">
-
+                        <% for (let i =0;i<completedList.length;i++){ %>
+                            <div class="item" draggable="true">
+                                <p> <%=completedList[i]%></p>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
             </div>
         </div>
-    <script src="http://127.0.0.1:3000/main.js"></script>
+    <script src="http://127.0.0.1:3000/dragDrop.js"></script>
     </body>
     </html>

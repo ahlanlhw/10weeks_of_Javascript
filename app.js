@@ -1,29 +1,65 @@
+// // connect to DB here
+const mongoose = require('mongoose');
+// change the ip here
+let projName = "projKanban"
+const db_name = 'mongodb://127.0.0.1:27017/'+projName;
+mongoose.connect(db_name, {
+    useNewUrlParser: true,
+         useUnifiedTopology: true,})   
+  .then(() => console.log("Database connected!"))
+  .catch(err => console.log(err));
+
+//   Setup proj Schema
+const projSchema = new mongoose.Schema({
+    task: {type:String,
+    required:[true,"why no task?"]},
+
+    taskDateCreated: String,
+    taskDesc: String,
+    taskStatus: String
+  });
+  const task = mongoose.model("task",projSchema);
+
+// Web application code here
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
+let items = [];
 app.get("/",function(req,res){
-    let today = new Date();
-    var options = {
-        weekday:"long",
-        day: "numeric",
-        month: "long",
-    }
-    let a = today.toLocaleDateString('en-UK',options);
     res.render("list",{
-        dayz: a
+        listItem:items,
+        wipList:,
+        completedList:,
     });
-    // console.log("rendered list.ejs successfully!");
 });
 
-// app.post('/',function(req,res){
-//     let item = req.body.newItem;
-//     // console.log(item);
-//     items.push(item);
-//     res.redirect('/');
-// })
+app.post('/',function(req,res){
+    let item = req.body.newItem;
+    // console.log(req.body.newItem)
+    newTask = {
+        task: item,
+        // taskDesc: String,
+        taskDateCreated: (new Date()).toLocaleDateString('en-UK'),
+        taskStatus: "Scoping"
+    };
+    task.insertMany([newTask],function(err){
+    if (err){
+        console.log(err);}
+        else {
+        console.log(`Saved task ${newTask}!`);
+        };
+    }
+    );
+
+
+    items.push(item);
+    res.redirect('/');
+})
 
 app.listen(3000,function(){
     console.log("listening on port 3000");

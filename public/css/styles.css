@@ -16,7 +16,6 @@ h3{
 
 
 
-
 /* sideBar Segment */
 .sideNav {
     float:left;
@@ -76,12 +75,16 @@ h3{
     font-weight:900;
 }
 
-#item {
-    min-height: 70px;
-    display: flex;
-    text-align: center;
-    border-bottom: 1px solid #F1F1F1;
-    border-radius:8px;
+.item {
+    /* display: flex; */
+    text-align: left;
+    vertical-align: center;
+    height: 50px;
+    margin:5px 5px;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 200;
   }
   
 .item:last-child {
@@ -101,7 +104,7 @@ input[type="checkbox"] {
   
 input[type="text"] {
     text-align: center;
-    height: 60px;
+    height: 50px;
     top: 10px;
     border: none;
     background: transparent;
@@ -129,5 +132,5 @@ form {
     margin-left: 15px;
 }
 .list{
-    min-height:200px;
+    min-height:100px;
 }
