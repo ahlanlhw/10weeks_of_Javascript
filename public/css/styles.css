@@ -1,0 +1,133 @@
+html{
+    background-color: #E4E9FD;
+  background-image: -webkit-linear-gradient(65deg, #ffbfff 35%, #E4E9FD 65%);
+    min-height:100%;
+    max-height:600px;
+    max-width:1200px;
+    font-family: "Roboto",'Open Sans', 'Helvetica Neue', "sans-serif"
+    /* overflow:hidden; */
+}
+
+h3{
+    text-align:center;
+}
+/* Header Block */
+
+
+
+
+
+/* sideBar Segment */
+.sideNav {
+    float:left;
+    width: 150px;
+    height:600px;
+    background:rgba(0, 0, 0, 0.1);
+    position:fixed;
+    margin-top:auto;
+    border: 1px;
+    border-style:solid;
+    border-color:black;
+}
+
+.logoPlaceHolder{
+    border: 1px;
+    border-style:solid;
+    border-color:black;
+    /* box-sizing: border-box; */
+    min-height:50px;
+    text-align:center;
+    /* padding:auto; */
+}
+
+.navBarItems{
+    min-height:100px;
+    border: 1px;
+    border-style:solid;
+    border-color:black;
+}
+
+/* contentBlock */
+.contentBlob{
+    margin: 20px 20px 20px 150px ;
+    border: 1px;
+    border-style:solid;
+    border-color:black;
+    /* width:100%; */
+}
+.row:after{
+    display:table;
+}
+.rowBlocks{
+    float:left;
+    min-width:33.13%;
+    max-width:33.13%;
+    margin: 0 0;
+    border: 1px;
+    border-style:solid;
+    border-color:black;
+    min-height:506px;
+}
+.rowHeader{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #bfbfbb;
+    font-weight:900;
+}
+
+#item {
+    min-height: 70px;
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #F1F1F1;
+    border-radius:8px;
+  }
+  
+.item:last-child {
+    border-bottom: 0;
+    min-width:80%;
+}
+  
+input:checked+p {
+    text-decoration: line-through;
+    text-decoration-color: #A683E3;
+}
+  
+input[type="checkbox"] {
+    margin-left:auto;
+    margin-right:20px;
+}
+  
+input[type="text"] {
+    text-align: center;
+    height: 60px;
+    top: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: inset 0 -3px 0 0 #A683E3;
+}
+
+
+p{
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #00204a;
+    text-align:center;
+}
+  
+form {
+    text-align: center;
+    margin-left: 15px;
+}
+.list{
+    min-height:200px;
+}
