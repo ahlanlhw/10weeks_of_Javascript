@@ -42,42 +42,52 @@
                     <form class ='' action="/" method="post">
                         <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
                         <button type="submit" name="button">+</button>
-                        <!-- //     document.querySelector('.myForm').addEventListener('submit', function(evt) {
-                        //         // let projTask = [];
-                        //         // projTask.state = evt.target.parentElement.parentElement.querySelector('.rowHeader').textContent.trim();
-                        //         console.log(evt.target.parentElement.parentElement.querySelector('.rowHeader'));
-                        //         }); -->
                     </form>
-                    <div class="list">
-                        <% for (let i =0;i<listItem.length;i++){ %>
-                            <div class="item" draggable="true">
-                                <p> <%=listItem[i]%></p>
-                            </div>
-                        <% } %>
+                    <div class="list" id = 'scoping'>
+                        <% listItem.forEach(function(item){ %>
+                            <form action = '/delete' method = 'post'>
+                                <div class="item" draggable="true">
+                                    <p> <%=item.task%></p>
+                                    <p> <%=item.taskDateCreated%></p>
+                                    <p hidden=true> <%=item._id%></p>
+                                    <input type="checkbox" name="taskToDelete" value="<%= item._id %>" onChange="this.form.submit()">
+                                </div>
+                            </form>
+                        <% }) %>
                     </div>
                 </div>
                 <div class="rowBlocks">
                     <div class="rowHeader">
                         Work in Progress
                     </div>
-                    <div class = "list">
-                        <% for (let i =0;i<wipList.length;i++){ %>
-                            <div class="item" draggable="true">
-                                <p> <%=wipList[i]%></p>
-                            </div>
-                        <% } %>
+                    <div class = "list" id = "wipList">
+                        <% wipList.forEach(function(item){ %>
+                            <form action = '/delete' method = 'post'>
+                                <div class="item" draggable="true">
+                                    <p> <%=item.task%></p>
+                                    <p> <%=item.taskDateCreated%></p>
+                                    <p hidden=true> <%=item._id%></p>
+                                    <input type="checkbox" name="taskToDelete" value="<%= item._id %>" onChange="this.form.submit()">
+                                </div>
+                            </form>
+                        <% }) %>
                     </div>
                 </div>
                 <div class="rowBlocks">
                     <div class="rowHeader">
                         Completed
                     </div>
-                    <div class = "list">
-                        <% for (let i =0;i<completedList.length;i++){ %>
-                            <div class="item" draggable="true">
-                                <p> <%=completedList[i]%></p>
-                            </div>
-                        <% } %>
+                    <div class = "list" id="completedList">
+                        <% completedList.forEach(function(item){ %>
+                            <form action = '/delete' method = 'post'>
+                                <div class="item" draggable="true">
+                                    <p> <%=item.task%></p>
+                                    <p> <%=item.taskDateCreated%></p>
+                                    <p hidden=true> <%=item._id%></p>
+                                    <input type="checkbox" name="taskToDelete" value="<%= item._id %>" onChange="this.form.submit()">
+                                </div>
+                            </form>
+                        <% }) %>
                     </div>
                 </div>
             </div>

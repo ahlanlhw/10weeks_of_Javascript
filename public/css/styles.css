@@ -76,7 +76,7 @@ h3{
 }
 
 .item {
-    /* display: flex; */
+    display: flex;
     text-align: left;
     vertical-align: center;
     height: 50px;
@@ -89,7 +89,7 @@ h3{
   
 .item:last-child {
     border-bottom: 0;
-    min-width:80%;
+    /* min-width:80%; */
 }
   
 input:checked+p {
